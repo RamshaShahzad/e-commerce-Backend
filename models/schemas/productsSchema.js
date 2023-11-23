@@ -8,22 +8,35 @@ const products = sequelize.define(
       autoIncrement: true,
       type: DataTypes.INTEGER,
     },
-    productName: {
+    title: {
       unique: true,
       type: DataTypes.STRING,
       allowNull: false,
     },
-    productTitle: {
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    price: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    image: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    productImage: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    productDescription: {
-      type: DataTypes.STRING,
-      allowNull: false,
+    // category: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    // },
+    rating: {
+      type: DataTypes.JSON,
+      rate: {
+        type: DataTypes.FLOAT,
+      },
+      count: {
+        type: DataTypes.INTEGER,
+      },
     },
   },
   {

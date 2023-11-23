@@ -1,6 +1,8 @@
 const productsService = require("../Service/productsService");
 const { models } = require("../models");
 const productValidation = require("../Controller/productValidation");
+const products = require("../models/schemas/productsSchema");
+const ProductData = require("../productdata.json");
 
 module.exports = {
   getAllProducts: async (req, res) => {
@@ -55,5 +57,12 @@ module.exports = {
     } else {
       return res.status(404).send("Product not found");
     }
+  },
+  bulkProductData: async (req, res) => {
+    const Products = await products.bulkCreate(ProductData);
+    res.status(201).json({
+      success: true,
+      Products,
+    });
   },
 };

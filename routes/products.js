@@ -8,5 +8,5 @@ router.get("/getProduct/:id", productController.getProductById);
 router.post("/createProduct", productController.createProduct);
 router.put("/updateProduct/:id", productController.updateProduct);
 router.delete("/deleteProduct/:id", productController.deleteProduct);
-
+router.post("/bulkCreate", productController.bulkProductData);
 module.exports = router;
